@@ -1,0 +1,112 @@
+#!/usr/bin/env python3
+################################################################
+#Author(s): Vecheka Chhourn, Sasank Tummalapalli
+#Run-Time: python3
+################################################################
+import netmiko
+from getpass import getpass
+from netmiko import file_transfer
+from netmiko.ssh_exception import NetMikoTimeoutException
+from netmiko.ssh_exception import NetMikoAuthenticationException
+from netmiko import SCPConn
+import string
+import datetime
+from datetime import timedelta, datetime
+import sys
+import json
+import os
+import re
+import pathlib
+import requests
+import subprocess
+from time import sleep
+from threading import Thread
+import argparse
+from common import common
+from action import actions
+
+log_file = None
+sys.path.insert(0, "/opt/adi") #THIS IS FROM WHERE WE GET THE HOSTS (INTERNAL APP)
+from nsg_hosts import get_hosts#IMPORTING THE get_hosts FROM nsg_hosts
+
+directory = pathlib.Path(__file__).parent.absolute()
+config = json.load(open(f"{directory}/config.json"))
+running_configs = f'{directory}/run_conf'
+
+
+def run(creds, nodes):
+    try:
+        if action == 'upload':
+            actions.upload(creds, nodes, config, running_configs)
+
+        elif action == 'upgrade':
+            actions.upgrade_ios(creds, nodes, config)
+
+        elif action == 'delete':
+            actions.delete(creds, nodes)
+
+        elif action == 'rollback':
+            actions.rollback(creds, nodes)
+
+        elif action == 'list-model':
+            actions.list_model(creds, nodes)
+
+
+    except Exception as e:
+        common.log(f'{node} - exception in run under cisco_upgrade : {e}')
+        print(f'{node} - \n exception in run under cisco_upgrade: {e}')
+
+
+def main():
+
+    username = input('Username:')
+    password = getpass()
+
+    ##TODO: uncomment when ready to push
+    print('Please re-enter,')
+
+    password2 = getpass()
+    if password != password2:
+      common.log(f'Passwords do not match. Exiting.')
+      print(f'Passwords do not match. Exiting.')
+      raise SystemExit
+
+    creds = {}
+    creds['username'] = username
+    creds['password'] = password
+
+
+    if 'cr' in hosts or 'cs' in hosts or 'js' in hosts:
+        nodes = hosts.split(',')
+        run(creds, nodes)
+
+    else :
+        stores = hosts.split(',')
+        for store in stores:
+            nodes =  get_hosts(f'store_{store}')
+            nodes.sort()
+            run(creds, nodes)
+
+
+
+if __name__ == '__main__':
+    if len(sys.argv) < 3:
+        common.instruction()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("action", type = str , default=None, const = None, help = "Please give upgrade or upload.")
+    parser.add_argument("stores", type = str , default=None, const = None, help = "Enter either location or device hostname saperated by comas")
+    args = parser.parse_args()
+
+    action = args.action
+    hosts = args.stores
+
+
+    action_list = ['upload', 'upgrade', 'delete', 'rollback', 'list-model']
+
+    if action == None or hosts == None :
+        common.instruction()
+
+    elif action.lower() not in action_list:
+        common.instruction()
+
+    main()

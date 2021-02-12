@@ -1,0 +1,68 @@
+{
+  "cisco ISR4331": {
+    "md5": "08d876e4eca745843e8aa69a9cf1cb3e",
+    "sha512": "b121b2efd41ff73bf5e3f2211d10c061ad48e9494cd9d487074616f71d2a5b03ea761a56eeac240c7223269055019a3aa69827f6310b57ec97e1ac638d14007c",
+    "image": "isr4300-universalk9.16.09.06.SPA.bin",
+    "rommon-version": "16.7(5r)"
+  },
+
+  "cisco WS-C2960X-48LPS-L": {
+    "md5": "f148fc860a1d4d08532bc616724e632d",
+    "sha512": "4c6a0866b22b6bb7968a0e697ee22802c1c673a91087952e26ab8c4bdc285227a4d80b4f36965d0bbbb05ca76aee18b370caaab68c919205da6471b39eae0477",
+    "image": "c2960x-universalk9-mz.152-7.E3.bin"
+  },
+
+  "cisco WS-C2960+48PST-L": {
+    "md5": "f148fc860a1d4d08532bc616724e632d",
+    "sha512": "4c6a0866b22b6bb7968a0e697ee22802c1c673a91087952e26ab8c4bdc285227a4d80b4f36965d0bbbb05ca76aee18b370caaab68c919205da6471b39eae0477",
+    "image": "c2960x-universalk9-mz.152-7.E3.bin"
+  },
+
+  "cisco WS-C2960S-48LPS-L": {
+    "md5": "ea604d030b378b6c5c3dda3d501ac2f5",
+    "sha512": "602990895ac22b213988495d48856e368eb74a36d0a6961df9b64c2f672f1b0370c73a039214455f13fd48696e47256ccd8e07d13a4e67b82f2da4bc83cf0255",
+    "image": "c2960s-universalk9-mz.152-2.E9.bin"
+  },
+
+  "cisco ISR4551": {
+    "md5": "717625455dcba3677a36767567cfd33c",
+    "sha512": "15496e54a49082c6249a4be4f2b7512626a5a203b3e3fda684cac81b4f8d2c4922ef46cf99fa51767ecdab9d48d6c3c14bec9b4318040f15c417fefb8ca7befd",
+    "image": "isr4400-universalk9.16.09.06.SPA.bin"
+  },
+
+  "cisco ASR1002-HX": {
+    "md5": "cbf7dc880278132af70a3f232ec3991d",
+    "sha512": "fa7962ce3f1374543c276d380f3928c9a527d41cd800d9613fcd5e7bdb952728d0e5635f45b1b1f67a7bf8d1f3666db54144935de111570944067a813a77831a",
+    "image": "asr1000-universalk9.16.09.06.SPA.bin"
+  },
+
+  "cisco ASR1002-X": {
+    "md5": "d724ead586771abcdd81f612d45c5c49",
+    "sha512": "ddbc4178a6a45beb415dc693a9cde85c26f960518a42e2ee712a8f384d771cddf3c94093e0d3ab9d7b11c485cd76efc9434f64e4f9db5233ea6a78639a862de1",
+    "image": "asr1002x-universalk9.16.09.06.SPA.bin"
+  },
+
+  "cisco ASR1006-X": {
+    "md5": "6dd3dcb9d4f2a3ff42fc4b90f9b0cae0",
+    "sha512": "3e6c10a81e8d852bc147c08c895f81164e4360347781532c74de6273a6b92c69e277aa9bda04ea6fb17496e5d78b254d42bf78721ffee5cdeeddc0d4d5610d93",
+    "image": "asr1000rpx86-universalk9.16.09.06.SPA.bin"
+  },
+
+  "cisco 2921K9": {
+    "md5": "11246d7c43d89cbd029baf518b984166",
+    "sha512": "1762cb5b7e1e3c909b433287da9edea1a948889ecdb9845f98469e5a08ce2fa4a9481799dc2bc1b4ae9b5d97f19cc7c113154d958b7904d97e8b2005a933ea08",
+    "image": "c2900-universalk9-mz.SPA.157-3.M7.bin"
+  },
+
+  "cisco 4500X": {
+    "md5": "6d3544a4955fd770032b4225f78ea318",
+    "sha512": "bcf02c7edb2338b7826db246c0e1fc044dd6c41ac68a1be5892c303ed0f17558b3590da7be3d3840de9f865b88e5feb009fb8ca8e2b14cc7ae2a9cfb7fc53d38",
+    "image": "cat4500e-universal.SPA.03.11.02.E.152-7.E2.bin"
+  },
+
+  "MX104": {
+    "md5": "45f539f901d54d7c60fad42cd1748069",
+    "sha512": "9c7f57f140b66e813c6bd137a1f627997412987bc9261374e5616733fc4b71e0009084bf56107e34b9c161ab767addf05d1f84945fc511b29267623461bd889d",
+    "image": "17.3R3-S10"
+  }
+}
